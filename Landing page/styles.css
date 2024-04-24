@@ -1,0 +1,26 @@
+/* Custom CSS for Samsung Landing Page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.text-center {
+    color: #FF0000; /* Samsung red */
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+#samsungCards .card {
+    background-color: #f8f9fa;
+}
+
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
