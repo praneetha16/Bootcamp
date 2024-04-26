@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    #registrationFormContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #3c3838;
+    }
+
+    #registrationForm {
+        background-color: #73c8e7;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        display: block; /* Ensure h2 is displayed on its own line */
+    }
+
+    label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .error {
+        color: red;
+        font-size: 12px;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div id="registrationFormContainer">
+    <div id="registrationForm">
+        <h2>Student Registration Form</h2>
+
+        <form onsubmit="return validateForm()">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <span id="nameError" class="error"></span><br>
+            
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <span id="emailError" class="error"></span><br>
+            
+            <label for="rollNumber">Roll Number:</label><br>
+            <input type="text" id="rollNumber" name="rollNumber" required><br>
+            <span id="rollNumberError" class="error"></span><br>
+            
+            <label for="collegeName">College Name:</label><br>
+            <input type="text" id="collegeName" name="collegeName" required><br>
+            <span id="collegeNameError" class="error"></span><br>
+            
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <span id="passwordError" class="error"></span><br>
+            
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</div>
+
+<script>
+function validateForm() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var rollNumber = document.getElementById("rollNumber").value;
+    var collegeName = document.getElementById("collegeName").value;
+    var password = document.getElementById("password").value;
+    
+    var nameError = document.getElementById("nameError");
+    var emailError = document.getElementById("emailError");
+    var rollNumberError = document.getElementById("rollNumberError");
+    var collegeNameError = document.getElementById("collegeNameError");
+    var passwordError = document.getElementById("passwordError");
+    
+    var isValid = true;
+    
+    // Validate Name
+    if (name.trim() === "") {
+        nameError.textContent = "Name is required";
+        isValid = false;
+    } else {
+        nameError.textContent = "";
+    }
+    
+    // Validate Email
+    if (email.trim() === "") {
+        emailError.textContent = "Email is required";
+        isValid = false;
+    } else {
+        emailError.textContent = "";
+    }
+    
+    // Validate Roll Number
+    if (rollNumber.trim() === "") {
+        rollNumberError.textContent = "Roll Number is required";
+        isValid = false;
+    } else {
+        rollNumberError.textContent = "";
+    }
+    
+    // Validate College Name
+    if (collegeName.trim() === "") {
+        collegeNameError.textContent = "College Name is required";
+        isValid = false;
+    } else {
+        collegeNameError.textContent = "";
+    }
+    
+    // Validate Password
+    if (password.trim() === "") {
+        passwordError.textContent = "Password is required";
+        isValid = false;
+    } else {
+        passwordError.textContent = "";
+    }
+    
+    return isValid;
+}
+</script>
+
+</body>
+</html>
